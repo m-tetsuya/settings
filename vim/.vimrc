@@ -1,21 +1,25 @@
+if filereadable($HOME . '.vimrc.local')
+  source $HOME/.vimrc.local
+endif
+
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim.git
 
   call neobundle#rc(expand('~/.vim/bundle'))
 endif
 
-NeoBundle 'git://github.com/Shougo/clang_complete.git'
-NeoBundle 'git://github.com/Shougo/echodoc.git'
-NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'git://github.com/Shougo/unite.vim.git'
-NeoBundle 'git://github.com/Shougo/vim-vcs.git'
-NeoBundle 'git://github.com/Shougo/vimfiler.git'
-NeoBundle 'git://github.com/Shougo/vimshell.git'
-NeoBundle 'git://github.com/Shougo/vinarise.git'
-NeoBundle 'git://github.com/tpope/vim-surround.git'
-NeoBundle 'git://github.com/ujihisa/quickrun.git'
-NeoBundle 'git://github.com/derekwyatt/vim-scala.git'
+"NeoBundle 'Shougo/clang_complete.git'
+NeoBundle 'Shougo/echodoc.git'
+NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'Shougo/neobundle.vim.git'
+NeoBundle 'Shougo/unite.vim.git'
+NeoBundle 'Shougo/vim-vcs.git'
+NeoBundle 'Shougo/vimfiler.git'
+NeoBundle 'Shougo/vimshell.git'
+NeoBundle 'Shougo/vinarise.git'
+NeoBundle 'tpope/vim-surround.git'
+NeoBundle 'ujihisa/quickrun.git'
+NeoBundle 'derekwyatt/vim-scala.git'
 
 let g:neocomplcache_enable_at_startup = 1
 
