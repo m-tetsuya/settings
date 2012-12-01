@@ -1,4 +1,9 @@
-source C:\Program Files\Vim\vimfiles\etc\encode.vim
+if has('gui_running')
+  source C:\Program Files\Vim\vimfiles\etc\encode.vim
+else
+  source /cygdrive/c/Program\ Files/Vim/vimfiles/etc/encode.vim
+endif
+
 filetype plugin indent on
 au FileType javascript set ts=2 sw=2 expandtab
 au FileType css set ts=2 sw=2 expandtab
