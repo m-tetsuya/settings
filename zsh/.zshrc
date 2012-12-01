@@ -7,3 +7,7 @@ export PATH=~/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin # Add RVM to PATH for scri
 
 autoload -U compinit
 compinit
+
+#javac 文字化け回避
+export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
+
