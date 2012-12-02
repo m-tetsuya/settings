@@ -15,7 +15,9 @@ NeoBundle 'git://github.com/Shougo/vimshell.git'
 NeoBundle 'git://github.com/Shougo/vinarise.git'
 NeoBundle 'git://github.com/tpope/vim-surround.git'
 NeoBundle 'git://github.com/ujihisa/quickrun.git'
+NeoBundle 'git://github.com/derekwyatt/vim-scala.git'
 
+let g:neocomplcache_enable_at_startup = 1
 
 au FileType javascript set ts=2 sw=2 expandtab
 au FileType css set ts=2 sw=2 expandtab
@@ -75,7 +77,6 @@ if has('win32')
 
   :au BufEnter * execute ":lcd " . expand("%:p:h")
 
-  let g:neocomplcache_enable_at_startup = 1
 
   set autoread
   augroup vimrc-checktime
