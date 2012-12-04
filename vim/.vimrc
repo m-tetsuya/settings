@@ -41,6 +41,8 @@ set incsearch
 set autoindent
 set nocompatible
 
+colorscheme darkblue
+
 syntax on
 filetype on
 filetype indent on
@@ -59,7 +61,6 @@ if has('win32')
   augroup END
   au GUIEnter * simalt ~x
 
-  colorscheme darkblue
   autocmd GUIEnter * simalt ~x
 
   set clipboard+=unnamed
