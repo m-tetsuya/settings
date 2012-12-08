@@ -32,7 +32,7 @@ case ${OSTYPE} in
     autoload colors
     colors
     export PROMPT="%B%{${fg[white]}%}[%n@%m] %/
-    %# %{${reset_color}%}%b"
+%# %{${reset_color}%}%b"
 
     alias open=cygstart
     function open(){

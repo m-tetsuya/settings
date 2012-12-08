@@ -25,11 +25,13 @@ au FileType java set ts=4 sw=4 expandtab
 au BufNewFile *.js set ft=javascript
 
 set encoding=utf-8
+set fileformat=unix
 set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set hlsearch
+set fileencoding=utf-8
 set fenc=utf-8
 set number
 set hidden
@@ -41,6 +43,13 @@ syntax on
 filetype on
 filetype indent on
 filetype plugin on
+
+"XML閉じタグ補完
+augroup MyXML
+  autocmd!
+  autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
+  autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
+augroup END
 
 if has('win32')
   if has('gui_running')
