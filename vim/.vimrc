@@ -18,8 +18,10 @@ NeoBundle 'Shougo/vimfiler.git'
 NeoBundle 'Shougo/vimshell.git'
 NeoBundle 'Shougo/vinarise.git'
 NeoBundle 'tpope/vim-surround.git'
-NeoBundle 'ujihisa/quickrun.git'
 NeoBundle 'derekwyatt/vim-scala.git'
+NeoBundle 'thinca/vim-quickrun.git'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'ujihisa/shadow.vim'
 
 let g:neocomplcache_enable_at_startup = 1
 
