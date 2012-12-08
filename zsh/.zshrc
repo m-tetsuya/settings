@@ -18,16 +18,19 @@ compinit
 #javac 文字化け回避
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory extendedglob notify
+bindkey -e
+
+export PROMPT="%B%{${fg[white]}%}[%n@%m] %/
+%# %{${reset_color}%}%b"
+
 case ${OSTYPE} in
   cygwin*)
 
     zstyle :compinstall filename '/home/S124123/.zshrc'
-
-    HISTFILE=~/.histfile
-    HISTSIZE=1000
-    SAVEHIST=1000
-    setopt appendhistory extendedglob notify
-    bindkey -e
 
     autoload colors
     colors
