@@ -22,6 +22,7 @@ NeoBundle 'derekwyatt/vim-scala.git'
 NeoBundle 'thinca/vim-quickrun.git'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'ujihisa/shadow.vim'
+NeoBundle 'jondistad/vimclojure'
 
 let g:neocomplcache_enable_at_startup = 1
 
