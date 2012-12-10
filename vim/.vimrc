@@ -1,21 +1,28 @@
+if filereadable($HOME . '.vimrc.local')
+  source $HOME/.vimrc.local
+endif
+
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim.git
 
   call neobundle#rc(expand('~/.vim/bundle'))
 endif
 
-NeoBundle 'git://github.com/Shougo/clang_complete.git'
-NeoBundle 'git://github.com/Shougo/echodoc.git'
-NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'git://github.com/Shougo/unite.vim.git'
-NeoBundle 'git://github.com/Shougo/vim-vcs.git'
-NeoBundle 'git://github.com/Shougo/vimfiler.git'
-NeoBundle 'git://github.com/Shougo/vimshell.git'
-NeoBundle 'git://github.com/Shougo/vinarise.git'
-NeoBundle 'git://github.com/tpope/vim-surround.git'
-NeoBundle 'git://github.com/ujihisa/quickrun.git'
-NeoBundle 'git://github.com/derekwyatt/vim-scala.git'
+"NeoBundle 'Shougo/clang_complete.git'
+NeoBundle 'Shougo/echodoc.git'
+NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'Shougo/neobundle.vim.git'
+NeoBundle 'Shougo/unite.vim.git'
+NeoBundle 'Shougo/vim-vcs.git'
+NeoBundle 'Shougo/vimfiler.git'
+NeoBundle 'Shougo/vimshell.git'
+NeoBundle 'Shougo/vinarise.git'
+NeoBundle 'tpope/vim-surround.git'
+NeoBundle 'derekwyatt/vim-scala.git'
+NeoBundle 'thinca/vim-quickrun.git'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'ujihisa/shadow.vim'
+NeoBundle 'jondistad/vimclojure'
 
 let g:neocomplcache_enable_at_startup = 1
 
@@ -29,11 +36,13 @@ au FileType java set ts=4 sw=4 expandtab
 au BufNewFile *.js set ft=javascript
 
 set encoding=utf-8
+set fileformat=unix
 set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set hlsearch
+set fileencoding=utf-8
 set fenc=utf-8
 set number
 set hidden
@@ -41,10 +50,19 @@ set incsearch
 set autoindent
 set nocompatible
 
+colorscheme darkblue
+
 syntax on
 filetype on
 filetype indent on
 filetype plugin on
+
+"XML閉じタグ補完
+augroup MyXML
+  autocmd!
+  autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
+  autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
+augroup END
 
 if has('win32')
   if has('gui_running')
@@ -59,7 +77,6 @@ if has('win32')
   augroup END
   au GUIEnter * simalt ~x
 
-  colorscheme darkblue
   autocmd GUIEnter * simalt ~x
 
   set clipboard+=unnamed
