@@ -19,6 +19,10 @@ NeoBundle 'git://github.com/derekwyatt/vim-scala.git'
 
 let g:neocomplcache_enable_at_startup = 1
 
+" For VimClojure
+let vimclojure#WantNailgun = 1
+let vimclojure#NailgunClient = "ng"
+
 au FileType javascript set ts=2 sw=2 expandtab
 au FileType css set ts=2 sw=2 expandtab
 au FileType java set ts=4 sw=4 expandtab
