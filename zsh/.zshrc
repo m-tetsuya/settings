@@ -39,6 +39,9 @@ setopt prompt_subst
 export PROMPT='%B%{${fg[white]}%}[%n@%m] %/
 `prompt-git-current-branch`%b%# '
 
+# for Clojure
+alias clj="java -cp ~/work/clojure-1.4.0/clojure-1.4.0.jar clojure.main"
+
 case ${OSTYPE} in
   cygwin*)
 
