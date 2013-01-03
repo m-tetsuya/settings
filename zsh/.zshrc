@@ -44,6 +44,7 @@ alias clj="java -cp ~/work/clojure-1.4.0/clojure-1.4.0.jar clojure.main"
 
 case ${OSTYPE} in
   cygwin*)
+    alias clj="java -cp c:/Users/S124123/work/clojure-1.4.0/clojure-1.4.0.jar clojure.main"
 
     zstyle :compinstall filename '/home/S124123/.zshrc'
 
