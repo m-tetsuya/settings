@@ -1,3 +1,16 @@
+function prompt-git-current-branch {
+  local name st color
+  
+  name=`git symbolic-ref HEAD 2> /dev/null`
+  if [[ -z $name ]]
+  then
+    return
+  fi
+  name=`basename $name`
+  
+  echo "%F{green}[$name]%f "
+}
+
 export LANG=ja_JP.UTF-8
 
 # homebrewを優先
@@ -12,9 +25,6 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' verbose true
 
-autoload -U compinit
-compinit
-
 #javac 文字化け回避
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
@@ -24,26 +34,27 @@ SAVEHIST=1000
 setopt appendhistory extendedglob notify
 bindkey -e
 
-export PROMPT="%B%{${fg[white]}%}[%n@%m] %/
-%# %{${reset_color}%}%b"
+autoload -U colors; colors
+setopt prompt_subst
+export PROMPT='%B%{${fg[white]}%}[%n@%m] %/
+`prompt-git-current-branch`%b%# '
 
 case ${OSTYPE} in
   cygwin*)
 
     zstyle :compinstall filename '/home/S124123/.zshrc'
 
-    autoload colors
-    colors
-    export PROMPT="%B%{${fg[white]}%}[%n@%m] %/
-%# %{${reset_color}%}%b"
-
     alias open=cygstart
     function open(){
-    cscript //Nologo C:/usr/bin/open.js `cygpath -wd $@`
-  }
-
-  alias vim=vi
-  cd
-  ;;
+      cscript //Nologo C:/usr/bin/open.js `cygpath -wd $@`
+    }
+  
+    alias vim=vi
+    cd
+    ;;
+  *)
+    autoload -U compinit
+    compinit
+    ;;
 esac
 
