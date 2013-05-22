@@ -16,8 +16,8 @@ NeoBundle 'Shougo/unite.vim.git'
 NeoBundle 'Shougo/vim-vcs.git'
 NeoBundle 'Shougo/vimfiler.git'
 NeoBundle 'Shougo/vimshell.git'
-NeoBundle 'Shougo/vinarise.git'
 NeoBundle 'Shougo/vimproc.git'
+NeoBundle 'Shougo/vinarise.git'
 NeoBundle 'tpope/vim-surround.git'
 NeoBundle 'derekwyatt/vim-scala.git'
 NeoBundle 'thinca/vim-quickrun.git'
@@ -39,6 +39,7 @@ au FileType java set ts=4 sw=4 expandtab
 au BufNewFile *.js set ft=javascript
 
 set encoding=utf-8
+set termencoding=utf-8
 set fileformat=unix
 set expandtab
 set tabstop=2
