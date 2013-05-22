@@ -24,6 +24,7 @@ zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character t
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' verbose true
+zstyle ':completion:*:processes' menu yes select=2
 
 #javac 文字化け回避
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
@@ -33,6 +34,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory extendedglob notify
 bindkey -e
+
+autoload -U compinit
+compinit
 
 autoload -U colors; colors
 setopt prompt_subst
@@ -57,8 +61,10 @@ case ${OSTYPE} in
     cd
     ;;
   *)
-    autoload -U compinit
-    compinit
     ;;
 esac
+
+# z
+[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
+
 
