@@ -62,3 +62,5 @@ case ${OSTYPE} in
     ;;
 esac
 
+# for svn
+export SVN_EDITOR="vim --noplugin"  
