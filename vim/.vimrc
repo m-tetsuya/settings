@@ -26,6 +26,8 @@ NeoBundle 'ujihisa/shadow.vim'
 NeoBundle 'jondistad/vimclojure'
 
 let g:neocomplcache_enable_at_startup = 1
+imap <C-k> <Plug>(neocomplcache_snippets_expand)
+smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 " For VimClojure
 let vimclojure#WantNailgun = 1
@@ -66,6 +68,15 @@ augroup MyXML
   autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
 augroup END
 
+"run vimfiler form unite
+call unite#custom_default_action('source/bookmark/directory' , 'vimfiler')
+let g:vimfiler_as_default_explorer=1
+let g:vimfiler_safe_mode_by_default=0
+command Ub Unite bookmark
+command Vf VimFiler
+command Vs VimFiler -split -simple -winwidth=35 -no-quit 
+
+
 if has('win32')
   if has('gui_running')
     source C:\Program Files\Vim\vimfiles\etc\encode.vim
@@ -79,17 +90,12 @@ if has('win32')
   augroup END
   au GUIEnter * simalt ~x
 
-  autocmd GUIEnter * simalt ~x
-
   set clipboard+=unnamed
 
+"全ての標準Javaクラスのハイライトを有効に
   :let java_highlight_all=1
-  syntax on
 
   :source $VIMRUNTIME/macros/matchit.vim
-
-  imap <C-k> <Plug>(neocomplcache_snippets_expand)
-  smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
   set iminsert=0
   set imsearch=0
@@ -99,7 +105,6 @@ if has('win32')
   :let MRU_Window_Height=15
 
   :au BufEnter * execute ":lcd " . expand("%:p:h")
-
 
   set autoread
   augroup vimrc-checktime
@@ -113,3 +118,11 @@ elseif has('mac')
   map ¥ <leader>
 
 endif
+
+" バッファ切り替えを容易に
+map <C-J> :bprev<CR>
+map <C-K> :bnext<CR>
+map <C-L> :tabn<CR>
+map <C-H> :tabp<CR>
+
+cd ~/
