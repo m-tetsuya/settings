@@ -8,20 +8,21 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/bundle'))
 endif
 
-NeoBundle 'http://github.com/Shougo/echodoc.git'
-NeoBundle 'http://github.com/Shougo/neocomplcache.git'
-NeoBundle 'http://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'http://github.com/Shougo/unite.vim.git'
-NeoBundle 'http://github.com/Shougo/vim-vcs.git'
-NeoBundle 'http://github.com/Shougo/vimfiler.git'
-NeoBundle 'http://github.com/Shougo/vimshell.git'
-NeoBundle 'http://github.com/Shougo/vinarise.git'
-NeoBundle 'http://github.com/tpope/vim-surround.git'
-NeoBundle 'http://github.com/derekwyatt/vim-scala.git'
-NeoBundle 'http://github.com/thinca/vim-quickrun.git'
-NeoBundle 'http://github.com/kchmck/vim-coffee-script'
-NeoBundle 'http://github.com/ujihisa/shadow.vim'
-NeoBundle 'http://github.com/jondistad/vimclojure'
+let g:neobundle_default_git_protocol='https'
+NeoBundle 'Shougo/echodoc.git'
+NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'Shougo/unite.vim.git'
+NeoBundle 'Shougo/vim-vcs.git'
+NeoBundle 'Shougo/vimfiler.git'
+NeoBundle 'Shougo/vimshell.git'
+NeoBundle 'Shougo/vinarise.git'
+NeoBundle 'tpope/vim-surround.git'
+NeoBundle 'derekwyatt/vim-scala.git'
+NeoBundle 'thinca/vim-quickrun.git'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'ujihisa/shadow.vim'
+NeoBundle 'jondistad/vimclojure'
+NeoBundle 'mattn/zencoding-vim.git'
 
 let g:neocomplcache_enable_at_startup = 1
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
@@ -122,5 +123,8 @@ map <C-J> :bprev<CR>
 map <C-K> :bnext<CR>
 map <C-L> :tabn<CR>
 map <C-H> :tabp<CR>
+
+" %でタグ対応タグの移動機能追加
+source $VIMRUNTIME/macros/matchit.vim
 
 cd ~/
