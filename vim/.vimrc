@@ -52,6 +52,7 @@ set hidden
 set incsearch
 set autoindent
 set nocompatible
+set ambiwidth=double
 
 colorscheme darkblue
 
