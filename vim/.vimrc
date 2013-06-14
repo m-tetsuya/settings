@@ -9,8 +9,10 @@ if has('vim_starting')
 endif
 
 let g:neobundle_default_git_protocol='https'
+NeoBundle 'Shougo/neobundle.vim.git'
 NeoBundle 'Shougo/echodoc.git'
 NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'Shougo/vimproc.git'
 NeoBundle 'Shougo/unite.vim.git'
 NeoBundle 'Shougo/vim-vcs.git'
 NeoBundle 'Shougo/vimfiler.git'
