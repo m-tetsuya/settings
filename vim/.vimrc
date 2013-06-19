@@ -112,6 +112,8 @@ if has('win32')
     autocmd WinEnter * checktime
   augroup END
 
+  cd ~/
+
 elseif has('mac')
 
   " MacVimでのleader設定
@@ -128,4 +130,3 @@ map <C-H> :tabp<CR>
 " %でタグ対応タグの移動機能追加
 source $VIMRUNTIME/macros/matchit.vim
 
-cd ~/
