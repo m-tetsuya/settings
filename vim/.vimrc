@@ -25,6 +25,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'ujihisa/shadow.vim'
 NeoBundle 'jondistad/vimclojure'
 NeoBundle 'mattn/zencoding-vim.git'
+NeoBundle 'mileszs/ack.vim'
 
 let g:neocomplcache_enable_at_startup = 1
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
