@@ -72,3 +72,7 @@ export SVN_EDITOR="vim --noplugin"
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
+# rbenv
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init -)"
+
