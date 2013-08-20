@@ -26,6 +26,8 @@ NeoBundle 'ujihisa/shadow.vim'
 NeoBundle 'jondistad/vimclojure'
 NeoBundle 'mattn/zencoding-vim.git'
 NeoBundle 'mileszs/ack.vim'
+NeoBundle 'jcfaria/Vim-R-plugin'
+NeoBundle 'ervandew/screen'
 
 let g:neocomplcache_enable_at_startup = 1
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
@@ -132,4 +134,17 @@ map <C-H> :tabp<CR>
 
 " %でタグ対応タグの移動機能追加
 source $VIMRUNTIME/macros/matchit.vim
+
+" 括弧などを自動で閉じる
+
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+vnoremap { "zdi^V{<C-R>z}<ESC>
+vnoremap [ "zdi^V[<C-R>z]<ESC>
+vnoremap ( "zdi^V(<C-R>z)<ESC>
+vnoremap " "zdi^V"<C-R>z^V"<ESC>
+vnoremap ' "zdi'<C-R>z'<ESC>
 
