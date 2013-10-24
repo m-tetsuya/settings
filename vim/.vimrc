@@ -59,6 +59,7 @@ set incsearch
 set autoindent
 set nocompatible
 set ambiwidth=double
+set nobackup
 
 colorscheme darkblue
 
