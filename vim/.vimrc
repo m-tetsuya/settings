@@ -29,6 +29,7 @@ NeoBundle 'mileszs/ack.vim'
 NeoBundle 'jcfaria/Vim-R-plugin'
 NeoBundle 'ervandew/screen'
 NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'tpope/vim-fugitive'
 
 let g:neocomplcache_enable_at_startup = 1
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
@@ -60,6 +61,44 @@ set autoindent
 set nocompatible
 set ambiwidth=double
 set nobackup
+set modeline
+set modelines=5
+set showmatch
+set matchpairs& matchpairs+=<:>
+set nowritebackup
+set noswapfile
+set novisualbell
+
+" ステータスラインの表示
+set statusline=%<     " 行が長すぎるときに切り詰める位置
+set statusline+=%{fugitive#statusline()}  " git branch
+set statusline+=\ \   " 空白スペース2個
+set statusline+=[%n]  " バッファ番号
+set statusline+=%m    " %m 修正フラグ
+set statusline+=%r    " %r 読み込み専用フラグ
+set statusline+=%h    " %h ヘルプバッファフラグ
+set statusline+=%w    " %w プレビューウィンドウフラグ
+set statusline+=%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}  " fencとffを表示
+set statusline+=%y    " バッファ内のファイルのタイプ
+set statusline+=\     " 空白スペース
+if winwidth(0) >= 130
+  set statusline+=%F    " バッファ内のファイルのフルパス
+else
+  set statusline+=%t    " ファイル名のみ
+endif
+set statusline+=%=    " 左寄せ項目と右寄せ項目の区切り
+set statusline+=%{fugitive#statusline()}  " Gitのブランチ名を表示
+set statusline+=\ \   " 空白スペース2個
+set statusline+=%1l   " 何行目にカーソルがあるか
+set statusline+=/
+set statusline+=%L    " バッファ内の総行数
+set statusline+=,
+set statusline+=%c    " 何列目にカーソルがあるか
+set statusline+=%V    " 画面上の何列目にカーソルがあるか
+set statusline+=\ \   " 空白スペース2個
+set statusline+=%P    " ファイル内の何％の位置にあるか
+
+set laststatus=2
 
 colorscheme darkblue
 
@@ -131,8 +170,8 @@ endif
 " バッファ切り替えを容易に
 map <C-J> :bprev<CR>
 map <C-K> :bnext<CR>
-map <C-L> :tabn<CR>
-map <C-H> :tabp<CR>
+"map <C-L> :tabn<CR>
+"map <C-H> :tabp<CR>
 
 " %でタグ対応タグの移動機能追加
 source $VIMRUNTIME/macros/matchit.vim
