@@ -30,6 +30,7 @@ NeoBundle 'jcfaria/Vim-R-plugin'
 NeoBundle 'ervandew/screen'
 NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'h1mesuke/unite-outline'
 
 let g:neocomplcache_enable_at_startup = 1
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
@@ -121,6 +122,7 @@ let g:vimfiler_safe_mode_by_default=0
 command Ub Unite bookmark
 command Vf VimFiler
 command Vs VimFiler -split -simple -winwidth=35 -no-quit 
+command Uo Unite -vertical -winwidth=40 -no-quit outline
 
 
 if has('win32')
