@@ -31,6 +31,7 @@ NeoBundle 'ervandew/screen'
 NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'tpope/vim-fireplace'
 
 let g:neocomplcache_enable_at_startup = 1
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
