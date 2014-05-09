@@ -40,6 +40,8 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 " For VimClojure
 let vimclojure#WantNailgun = 1
 let vimclojure#NailgunClient = "ng"
+let g:clj_highlight_builtins = 1
+let g:clj_paren_rainbow = 1
 
 au FileType javascript set ts=2 sw=2 expandtab
 au FileType css set ts=2 sw=2 expandtab
