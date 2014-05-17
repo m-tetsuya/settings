@@ -47,6 +47,7 @@ au FileType javascript set ts=2 sw=2 expandtab
 au FileType css set ts=2 sw=2 expandtab
 au FileType java set ts=4 sw=4 expandtab
 au BufNewFile *.js set ft=javascript
+au BufNewFile,BufRead *.cljs set filetype=clojure
 
 set encoding=utf-8
 set termencoding=utf-8
