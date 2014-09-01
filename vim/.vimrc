@@ -1,7 +1,3 @@
-if filereadable($HOME . '/.vimrc.local')
-  source $HOME/.vimrc.local
-endif
-
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim.git
 
@@ -187,4 +183,8 @@ let g:syntastic_mode_map = {
       \  'mode': 'active',
       \ 'passive_filetypes': ['html']
       \ }
+
+if filereadable($HOME . '/.vimrc.local')
+  source $HOME/.vimrc.local
+endif
 
