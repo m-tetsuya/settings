@@ -25,7 +25,7 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:processes' menu yes select=2
 
 #javac 文字化け回避
-export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
+export JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8 -XX:MaxPermSize=256m"
 
 HISTFILE=~/.histfile
 HISTSIZE=1000

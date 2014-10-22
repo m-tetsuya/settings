@@ -24,10 +24,12 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'jcfaria/Vim-R-plugin'
 NeoBundle 'ervandew/screen'
-NeoBundle 'scrooloose/syntastic.git'
+"NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'tpope/vim-fireplace'
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'joonty/vdebug.git'
 
 let g:neocomplcache_enable_at_startup = 1
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
