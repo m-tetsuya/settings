@@ -126,6 +126,15 @@ command Vf VimFiler
 command Vs VimFiler -split -simple -winwidth=35 -no-quit 
 command Uo Unite -vertical -winwidth=40 -no-quit outline
 
+augroup MyAutoCmd
+  autocmd!
+augroup END
+
+autocmd MyAutoCmd FileType vimfiler call s:vimfiler_settings()
+function! s:vimfiler_settings()
+  unmap <buffer> <C-j>
+endfunction
+
 
 if has('win32')
   if has('gui_running')
