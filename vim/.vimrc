@@ -1,8 +1,5 @@
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim.git
-
-  call neobundle#rc(expand('~/.vim/bundle'))
-endif
+set runtimepath+=~/.vim/bundle/neobundle.vim.git
+call neobundle#begin(expand('~/.vim/bundle'))
 
 let g:neobundle_default_git_protocol='https'
 NeoBundle 'Shougo/neobundle.vim.git'
@@ -30,6 +27,8 @@ NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'joonty/vdebug.git'
+
+call neobundle#end()
 
 let g:neocomplcache_enable_at_startup = 1
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
