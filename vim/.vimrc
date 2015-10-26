@@ -21,7 +21,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'jcfaria/Vim-R-plugin'
 NeoBundle 'ervandew/screen'
-"NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'tpope/vim-fireplace'
@@ -40,11 +40,14 @@ let vimclojure#NailgunClient = "ng"
 let g:clj_highlight_builtins = 1
 let g:clj_paren_rainbow = 1
 
-au FileType javascript set ts=2 sw=2 expandtab
+au FileType javascript set ts=4 sw=4 expandtab
 au FileType css set ts=2 sw=2 expandtab
 au FileType java set ts=4 sw=4 expandtab
 au BufNewFile *.js set ft=javascript
 au BufNewFile,BufRead *.cljs set filetype=clojure
+
+autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd FileType python setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 set encoding=utf-8
 set termencoding=utf-8
@@ -193,6 +196,8 @@ let g:syntastic_mode_map = {
       \  'mode': 'active',
       \ 'passive_filetypes': ['html']
       \ }
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+"let g:syntastic_python_checkers = ['flake8']
 
 if filereadable($HOME . '/.vimrc.local')
   source $HOME/.vimrc.local
