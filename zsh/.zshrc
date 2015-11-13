@@ -41,9 +41,6 @@ setopt prompt_subst
 export PROMPT='%B%{${fg[white]}%}[%n@%m] %/
 `prompt-git-current-branch`%b%# '
 
-# for Clojure
-alias clj="java -cp ~/work/clojure-1.4.0/clojure-1.4.0.jar clojure.main"
-
 case ${OSTYPE} in
   cygwin*)
     alias clj="java -cp c:/Users/S124123/work/clojure-1.4.0/clojure-1.4.0.jar clojure.main"
@@ -74,6 +71,13 @@ export SVN_EDITOR="vim --noplugin"
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+alias -s py='python'
+alias pydb='python -S ~/git/github/pydbgp/bin/pydbgp.py'
