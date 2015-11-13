@@ -27,6 +27,7 @@ NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'joonty/vdebug.git'
+NeoBundle 'nono/vim-handlebars.git'
 
 call neobundle#end()
 
@@ -45,6 +46,7 @@ au FileType css set ts=2 sw=2 expandtab
 au FileType java set ts=4 sw=4 expandtab
 au BufNewFile *.js set ft=javascript
 au BufNewFile,BufRead *.cljs set filetype=clojure
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars ts=4 sw=4 expandtab
 
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
