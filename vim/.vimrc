@@ -28,6 +28,7 @@ NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'joonty/vdebug.git'
 NeoBundle 'nono/vim-handlebars.git'
+NeoBundle 'leafgarland/typescript-vim'
 
 call neobundle#end()
 
