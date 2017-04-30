@@ -29,6 +29,7 @@ NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'joonty/vdebug.git'
 NeoBundle 'nono/vim-handlebars.git'
 NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'rust-lang/rust.vim'
 
 call neobundle#end()
 
